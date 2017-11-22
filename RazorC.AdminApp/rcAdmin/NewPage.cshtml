@@ -17,8 +17,9 @@
     var fromPage = Request["fromPage"];
 
     //List all Layout files
-    DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcLayouts"));
-    FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+    //DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcLayouts"));
+    //FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+    var fileInfo = RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.layouts;
 
     // list all the body pages
     List<string> pBodies = rcFunctions.pageBodies();
@@ -114,7 +115,7 @@
                 <select id="pMasterPage" name="pMasterPage" @Validation.For("pMasterPage")>
                @foreach (var f in fileInfo )
                {
-                <option value="@f.Name" @if(pMasterPage==f.Name){<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f.Name)</option>
+                <option value="@f" @if(pMasterPage==f){<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f)</option>
                 }
                 </select> <img src="images/help.gif" alt="help" title="Select layout/theme for new page. All layouts are in rcLayouts folder - you can add/change/modify them to fit your needs" /> @Html.ValidationMessage("pMasterPage")
             </li>

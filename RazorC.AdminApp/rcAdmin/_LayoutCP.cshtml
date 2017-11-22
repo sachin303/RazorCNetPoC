@@ -1,8 +1,10 @@
 ﻿@{
     //List all Layout files
-    DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcAddons"));
-    DirectoryInfo[] listAddons = dirInfo.GetDirectories("*", SearchOption.TopDirectoryOnly);
-  
+    var addOns = RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.addOns;
+
+   // DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcAddons"));
+    //DirectoryInfo[] listAddons = dirInfo.GetDirectories("*", SearchOption.TopDirectoryOnly);
+
 }
 <!DOCTYPE html>
 <html>
@@ -26,9 +28,9 @@
             @RenderSection("menu", false )
             <a href="http://www.razorc.net/add-ons" class="top">Add-ons</a>
             <ul>
-                @foreach (var d in listAddons)
+                @foreach (var d in addOns)
                 {
-                    <li><a href="@Href("~/rcAdmin/" + @d.Name + "/default")">@rcFunctions.addonsMenu(d.Name)</a></li>
+                    <li><a href="@Href("~/rcAdmin/" + @d + "/default")">@rcFunctions.addonsMenu(d)</a></li>
                 }
             </ul>
         </div>

@@ -10,8 +10,10 @@
     var errMSG = "";
 
     //List all Layout files
-    DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcTemplates"));
-    FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+    //DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcTemplates"));
+    //FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+
+    var fileInfo = RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.templates;
 
     Validation.RequireField("wName","Please Enter Name");
     Validation.RequireField("wFile","Please Select Template");
@@ -69,7 +71,7 @@
                 <select id="wFile" name="wFile" @Validation.For("wFile")>
                @foreach (var f in fileInfo )
                {
-                <option value="@f.Name" @if(wFile==f.Name){<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f.Name)</option>
+                <option value="@f" @if(wFile==f){<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f)</option>
                 }
                 </select> <img src="images/help.gif" alt="help" title="Template that razorC will use to render the widget. All are located in rcTemplates, so you can create new/change them to fit your needs" /> @Html.ValidationMessage("wFile")
             </li>

@@ -5,8 +5,9 @@
     var fbURL = System.Web.VirtualPathUtility.ToAbsolute("~/tinymce/plugins/FileManager/Default.aspx?sessionid=") + Session.SessionID.ToString();
 
     //List all Layout files
-    DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcTemplates"));
-    FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+    //DirectoryInfo dirInfo = new DirectoryInfo(Server.MapPath("~/rcTemplates"));
+    //FileInfo[] fileInfo = dirInfo.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+    var fileInfo =RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.templates;
 
     var Id = Request["id"];
     var errMSG = "";
@@ -147,8 +148,8 @@
                 <select id="wFile" name="wFile">
                @foreach (var f in fileInfo)
                {
-                <option value="@f.Name" @if (wFile == f.Name)
-                                        {<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f.Name)</option>
+                <option value="@f" @if (wFile == f)
+                                        {<text>selected="selected"</text>}>@rcFunctions.CleanRCNames(f)</option>
                }
                 </select> <img src="images/help.gif" alt="help" title="Template used to render widget - it changes the way how the content of this widget is displayed to end user. All templates are located in rcTemplates folder" />
             </li>

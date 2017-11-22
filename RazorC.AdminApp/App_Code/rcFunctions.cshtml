@@ -1,9 +1,9 @@
 ﻿@functions {
-/// <summary>
-/// clean names - remove _rc, .cshtml, rc from names
-/// </summary>
-/// <param name="name"></param>
-/// <returns></returns>
+    /// <summary>
+    /// clean names - remove _rc, .cshtml, rc from names
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public static string CleanRCNames(string name)
     {
         name = name.Replace("_rc", "");
@@ -24,30 +24,33 @@
 
         List<string> pBodies = new List<string>();
         // list all the body pages
-        DirectoryInfo dirInfoBody = new DirectoryInfo(Server.MapPath("~/rcTemplates/Body"));
-        FileInfo[] fileInfoBody = dirInfoBody.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+        //DirectoryInfo dirInfoBody = new DirectoryInfo(Server.MapPath("~/rcTemplates/Body"));
+        //FileInfo[] fileInfoBody = dirInfoBody.GetFiles("_*.cshtml", SearchOption.TopDirectoryOnly);
+
+        var fileInfoBody = RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.bodyPages;
+        
         foreach (var f in fileInfoBody)
         {
-            pBodies.Add(f.Name);
+            pBodies.Add(f);
         }
         //List all  pBody files in rcaddons
-        DirectoryInfo dirInfoBody1 = new DirectoryInfo(Server.MapPath("~/rcAddons"));
-        DirectoryInfo[] listAddons = dirInfoBody1.GetDirectories("*", SearchOption.TopDirectoryOnly);
+        //DirectoryInfo dirInfoBody1 = new DirectoryInfo(Server.MapPath("~/rcAddons"));
+        //DirectoryInfo[] listAddons = dirInfoBody1.GetDirectories("*", SearchOption.TopDirectoryOnly);
 
-        foreach (var d in listAddons)
+        //foreach (var d in listAddons)
+        //{
+
+        //FileInfo[] nameAddons = dirInfoBody1.GetFiles(d + "/Body/_*.cshtml", SearchOption.TopDirectoryOnly);
+        var nameAddons = RazorC.AdminApp.App_Code.ApplicationDirectory.AppFiles.addOns;
+        foreach (var n in nameAddons)
         {
-
-            FileInfo[] nameAddons = dirInfoBody1.GetFiles(d + "/Body/_*.cshtml", SearchOption.TopDirectoryOnly);
-
-            foreach (var n in nameAddons)
-            {
-                pBodies.Add(n.Name);
-            }
-
+            pBodies.Add(n);
         }
 
+        //}
+
         return pBodies;
-        
+
     }
 
 
@@ -64,8 +67,8 @@
         return _retV;
 
     }
-    
-    
-    
-    
+
+
+
+
 }

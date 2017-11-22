@@ -1,0 +1,7 @@
+﻿{
+  addOns: [ ],
+  bodyPages: [ "_rcDefaultBody.cshtml", "_rcNoTitleBody.cshtml" ],
+  templates: [ "_rcContactForm.cshtml","_rcHTML.cshtml","_rcJumbotron.cshtml","_rcSidebar.cshtml", "_rcStandard.cshtml"],
+  layouts: [ "_rcDefault.cshtml"],
+  masterPageCss: [ ]
+}
