@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@Page.mTitle</title>
+    <meta name="description" content="@Page.mDescription" />
+    <meta name="keywords" content="@Page.mKeywords" />
+    <!-- Bootstrap -->
+    <link href="/rcLayouts/Default/assets/bootstrap/css/bootstrap-slate.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="/rcLayouts/Default/assets/font-awesome-4.0.3/css/font-awesome.min.css" rel="stylesheet" media="screen">
+    <!-- Custom -->
+    <link href="/rcLayouts/Default/assets/custom/css/page-theme.css" rel="stylesheet" media="screen">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    @RenderSection("head")
+    @Html.Raw(App.siteAnalytics)
+</head>
+<body>
+
+    <header id="header" class="hidden-xs">
+        <div class="container ">
+            <div id="header-title" class="pull-left  col-sm-6 col-md-6">
+                <h1 class="animated fadeInLeft"><a href="/">
+                    @Html.Raw(@App.siteName)</a></h1>
+            </div>
+
+
+            <div id="header-contact" class="pull-right col-sm-6 col-md-6 text-right ">
+                <i class="fa fa-phone fa-2x"></i>CALL NOW: 555-555-555<br />
+                <i class="fa fa-envelope fa-2x"></i>company@domain.com
+            </div>
+
+        </div>
+        <!-- container -->
+    </header>
+    <!-- header -->
+
+    <!-- Static navbar -->
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    Menu:
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand visible-xs" href="/">@Html.Raw(@App.siteName)</a>
+
+                </div>
+            <div class="navbar-collapse collapse">
+                @rcHelpers.SimpleMenu(className: "nav navbar-nav navbar-left", id: "rcSimpleMenu")
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </div>
+
+
+    @RenderSection("rcTop", false)
+
+
+    <div class="container theme-showcase" role="main">
+        @*This is just to demonstrate how you can have multiple layout options
+        (1,2,3 columns) based on the defined sections for every page
+        You can use IsSectionDefined to hide/show blocks of html
+        The other option is to create multiple layout pages in rcLayouts folder
+        *@
+
+
+        @if (IsSectionDefined("rcLeft") && IsSectionDefined("rcRight"))
+        {
+            <!-- START 3 columns layout-->
+            <div class="row margin-top-25">
+                <div class="col-md-3">
+                    @RenderSection("rcLeft", false)
+                </div>
+                <div class="col-md-6">
+                    @RenderSection("rcAboveBody", false)
+                    @RenderBody()
+                    @RenderSection("rcBelowBody", false)
+                </div>
+                <div class="col-md-3">
+                    @RenderSection("rcRight", false)
+                </div>
+            </div>
+            <!-- END 3 columns layout-->
+        }
+
+
+        @if (IsSectionDefined("rcLeft") && !IsSectionDefined("rcRight"))
+        {
+            <!-- START 2 columns layout - left sidebar -->
+            <div class="row margin-top-25">
+                <div class="col-md-4">
+                    @RenderSection("rcLeft", false)
+                </div>
+                <div class="col-md-8">
+                    @RenderSection("rcAboveBody", false)
+                    @RenderBody()
+                    @RenderSection("rcBelowBody", false)
+                </div>
+            </div>
+            <!-- END 2 columns layout - left sidebar-->
+        }
+
+        @if (!IsSectionDefined("rcLeft") && IsSectionDefined("rcRight"))
+        {
+            <!-- START 2 columns layout - right sidebar-->
+            <div class="row  margin-top-25">
+                <div class="col-md-8">
+                    @RenderSection("rcAboveBody", false)
+                    @RenderBody()
+                    @RenderSection("rcBelowBody", false)
+                </div>
+                <div class="col-md-4">
+                    @RenderSection("rcRight", false)
+                </div>
+            </div>
+            <!-- END 2 columns layout - right sidebar-->
+        }
+
+        @if (!IsSectionDefined("rcLeft") && !IsSectionDefined("rcRight"))
+        {
+            <!-- START body only layout-->
+            <div class="row  margin-top-25">
+                <div class="col-md-12">
+                    @RenderSection("rcAboveBody", false)
+                    @RenderBody()
+                    @RenderSection("rcBelowBody", false)
+                </div>
+            </div>
+            <!-- END body only layout-->
+        }
+
+
+
+
+    </div>
+    <!-- /container -->
+
+
+    @RenderSection("rcBottom", false)
+
+    <!-- footerTopSection -->
+    <div class="panel-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h3>Contact us</h3>
+                    <p>
+                        <strong>New Media Group, Inc.</strong><br>
+                        PO BOX 2372<br>
+                        Glenview IL 60025<br>
+                        P : (555) 555-5555<br>
+                        E : info(at)razorc.net<br>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <h3>Recent NEWS </h3>
+                    <p>
+                        Best service provider for<br>
+                        <strong><a href="http://www.123prosite.com">web and application</a> </strong>design and development.
+                    </p>
+
+                </div>
+                <div class="col-md-3">
+                    <h3>Links</h3>
+                    <p>
+                        <a href="http://www.attract.click">Attract.CLICK</a><br>
+                        <a href="http://www.123prosite.com">123PROSite.com</a><br>
+                        <a href="http://www.arvixe.com/1564.html">Arvixe.com</a><br>
+                        <a href="http://www.smarterasp.net/index?r=nmgroup">SmarterASP.NET</a>
+                    </p>
+
+                </div>
+                <div class="col-md-3">
+                    <h3>Stay Connected</h3>
+
+                    <div id="social-header" class="pull-left ">
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <a href="#"><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></a>
+                        </span>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <a href="#"><i class="fa fa-google-plus fa-stack-1x fa-inverse"></i></a>
+                        </span>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-circle fa-stack-2x"></i>
+                            <a href="#"><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></a>
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footerBottomSection -->
+    <div class="footer">
+        <div class="container">
+            &copy; @DateTime.Now.Year, Allright reserved. 
+            @* DO NOT REMOVE "Powered by razorC.net CMS" link,
+            according to the terms of the razorC.net CMS license, you may NOT remove this! 
+            If you want to remove it , please visit: http://www.razorc.net/ and donate minimum 35 USD to this project
+            *@
+            <div class="pull-right">Powered by <a href="http://www.razorc.net">razorC.net CMS</a></div>
+        </div>
+    </div>
+
+    <div id="back-top">
+        <a href="#header"><i class="fa fa-chevron-up"></i></a>
+    </div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.2.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/rcLayouts/Default/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/rcLayouts/Default/assets/custom/js/app.js"></script>
+    <!--Validation-->
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/mvc/5.2.3/jquery.validate.unobtrusive.js"></script>
+
+
+
+</body>
+</html>

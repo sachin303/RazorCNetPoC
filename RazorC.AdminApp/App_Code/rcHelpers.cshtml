@@ -1,0 +1,93 @@
+﻿@helper SimpleMenu(string className = null, string id = null) {
+   
+    var db = Database.Open(SelectedrcInstance.Selected.rcConnectionString);
+    var sqlSelect = "select * from rc_SimpleMenu order by smOrderId DESC";
+    var data = db.Query(sqlSelect);
+
+    var pageName = Context.GetRouteValue("rcPageName");
+    if (pageName == null){pageName = "default";}
+
+    pageName = "~/" + pageName.ToLower() ;
+    if  (pageName=="~/default") { pageName = "~/"; }
+
+
+    <ul class="@className" id="@id">
+    @BuildMenu(data,0,pageName)
+    </ul>
+    
+}
+
+@helper  BuildMenu(IEnumerable<dynamic> menu, int parentid ,  string pageName ) {
+   
+    var items = menu.Where(m => m.smParentId == parentid);
+    
+    if (items.Any())
+    {
+
+        if(items.First().smParentId > 0){
+            @:<ul class="dropdown-menu">
+        }
+
+        foreach (var item in items)
+        {
+            var hasChilds = menu.Where(m => m.smParentId == item.Id);
+            var childPage="";
+            if (hasChilds.Any())
+            {
+                foreach (var child in hasChilds)
+                {
+                    if (pageName == child.smURL){
+                        pageName = item.smUrl;
+                        childPage = child.smURL;
+                    }
+                }
+            }
+            
+            string URL = item.smUrl;
+            if (item.smURL.ToString().StartsWith("~"))
+            {
+                URL = Href(item.smURL);
+            }
+
+            <li @if (pageName == item.smUrl ) { <text> class="active" </text> }>
+                <a href="@URL" target="@item.smTarget" @if (hasChilds.Any() ) { <text> data-toggle="dropdown" class="dropdown-toggle" </text> }>@item.smName @if (hasChilds.Any()) { <text><span class="caret"></span></text>}</a>
+                @BuildMenu(menu, item.Id, childPage )
+            </li>
+        }
+
+        if (items.First().smParentId > 0)
+        {
+            @:</ul>
+        }
+
+    }
+}
+
+
+@helper EditWidgetImg(int id, string wFile)
+    {
+        if (wFile.StartsWith("_addon_")){
+        <img src="images/addon.gif" class="rcGC" alt="Add-on" title="Go to add-ons to edit"/>
+        }
+            else{
+              <a href="EditWidget.cshtml?id=@id" title="Edit Widget"><img src="images/edit.gif" class="rcGC" alt="Edit"/></a>
+            }
+}
+
+
+@helper DeleteWidgetImg(int id, string wFile)
+    {
+        if (!wFile.StartsWith("_addon_")){
+              <a href="AllWidgets.cshtml?id=@id" onclick="return confirm('Are you sure you want to delete ?')" title="Delete"><img
+                        src="images/delete.gif" alt="Delete" class="rcGC" /></a>
+        }
+}
+
+
+@helper DeleteWidgetInPage(int pageId, string pageName, int id, string wFile)
+    {
+        //if (!wFile.StartsWith("_addon_")){
+            <a href="WidgetsInSection.cshtml?pId=@pageId&pName=@pageName&deleteId=@id" onclick="return confirm('Are you sure you want to delete ?')" title="Delete"><img
+                            src="images/delete.gif" alt="Delete" class="rcGC" /></a>
+        //}
+}

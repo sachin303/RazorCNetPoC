@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2008
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorC.NetWebApplication", "RazorC.NetWebApplication\RazorC.NetWebApplication.csproj", "{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorC.AdminApp", "RazorC.AdminApp\RazorC.AdminApp.csproj", "{AC7451EB-DF2B-4047-982A-20D7DE58DD66}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Marketer|Any CPU = Marketer|Any CPU
+		Release|Any CPU = Release|Any CPU
+		WebA|Any CPU = WebA|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Marketer|Any CPU.ActiveCfg = WebA|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Marketer|Any CPU.Build.0 = WebA|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.WebA|Any CPU.ActiveCfg = WebA|Any CPU
+		{E4AD2EBD-3BB8-4FDF-BB8D-263971D73D1D}.WebA|Any CPU.Build.0 = WebA|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Marketer|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Marketer|Any CPU.Build.0 = Release|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.WebA|Any CPU.ActiveCfg = Release|Any CPU
+		{AC7451EB-DF2B-4047-982A-20D7DE58DD66}.WebA|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1EFA98A1-F1CA-4887-AB5A-3195868033AF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,465 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC7451EB-DF2B-4047-982A-20D7DE58DD66}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RazorC.AdminApp</RootNamespace>
+    <AssemblyName>RazorC.AdminApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.0.1011, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.1.2.3\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.1.2.3\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.1.2.3\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.1.2.3\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=1.2.3.246, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.1.2.3\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=1.2.3.490, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.1.2.3\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Account\Login.cshtml" />
+    <Content Include="App_Code\rcFunctions.cshtml" />
+    <Content Include="App_Code\rcHelpers.cshtml" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <Content Include="bin\ApplicationInsights.config" />
+    <Content Include="bin\RazorC.NetWebApplication.dll.config" />
+    <Content Include="bin\roslyn\Microsoft.CSharp.Core.targets" />
+    <Content Include="bin\roslyn\Microsoft.VisualBasic.Core.targets" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Debug\RazorC.NetWebApplication.csprojResolveAssemblyReference.cache" />
+    <Content Include="rcAdmin\css\grid\grd_alt.png" />
+    <Content Include="rcAdmin\css\grid\grd_head.png" />
+    <Content Include="rcAdmin\css\grid\grd_pgr.png" />
+    <Content Include="rcAdmin\css\grid\style.css" />
+    <Content Include="rcAdmin\css\rcCP.css" />
+    <Content Include="rcAdmin\images\addon.gif" />
+    <Content Include="rcAdmin\images\arr_back.jpg" />
+    <Content Include="rcAdmin\images\arr_up.jpg" />
+    <Content Include="rcAdmin\images\backup.gif" />
+    <Content Include="rcAdmin\images\bg.jpg" />
+    <Content Include="rcAdmin\images\cancel.gif" />
+    <Content Include="rcAdmin\images\delete.gif" />
+    <Content Include="rcAdmin\images\down.gif" />
+    <Content Include="rcAdmin\images\edit.gif" />
+    <Content Include="rcAdmin\images\edit_page.gif" />
+    <Content Include="rcAdmin\images\help.gif" />
+    <Content Include="rcAdmin\images\image.gif" />
+    <Content Include="rcAdmin\images\up.gif" />
+    <Content Include="rcAdmin\images\update.gif" />
+    <Content Include="rcAdmin\images\widgets.gif" />
+    <Content Include="rcAdmin\images\_delete.gif" />
+    <Content Include="rcError.cshtml" />
+    <Content Include="tinymce\langs\readme.md" />
+    <Content Include="tinymce\plugins\FileManager\Web.config" />
+    <Content Include="tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="rcAdmin\AllPages.cshtml" />
+    <Content Include="rcAdmin\AllWidgets.cshtml" />
+    <Content Include="rcAdmin\ChangeOrderId.cshtml" />
+    <Content Include="rcAdmin\ChangePassword.cshtml" />
+    <Content Include="rcAdmin\Default.cshtml" />
+    <Content Include="rcAdmin\Editor.cshtml" />
+    <Content Include="rcAdmin\EditPage.cshtml" />
+    <Content Include="rcAdmin\EditWidget.cshtml" />
+    <Content Include="rcAdmin\NewPage.cshtml" />
+    <Content Include="rcAdmin\NewWidget.cshtml" />
+    <Content Include="rcAdmin\SimpleMenu.cshtml" />
+    <Content Include="rcAdmin\SiteSettings.cshtml" />
+    <Content Include="rcAdmin\Web.config" />
+    <Content Include="rcAdmin\WidgetsInSection.cshtml" />
+    <Content Include="rcAdmin\_LayoutCP.cshtml" />
+    <Content Include="rcAdmin\_Menu.cshtml" />
+    <Content Include="rcAdmin\_PageStart.cshtml" />
+    <Content Include="Instances.json" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <Content Include="_AppStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\razorC.sdf" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\AMD64\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\AMD64\sqlceca40.dll" />
+    <Content Include="bin\AMD64\sqlcecompact40.dll" />
+    <Content Include="bin\AMD64\sqlceer40EN.dll" />
+    <Content Include="bin\AMD64\sqlceme40.dll" />
+    <Content Include="bin\AMD64\sqlceqp40.dll" />
+    <Content Include="bin\AMD64\sqlcese40.dll" />
+    <Content Include="bin\EN\System.Data.SqlServerCe.xml" />
+    <Content Include="bin\Microsoft.AI.Agent.Intercept.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.dll" />
+    <Content Include="bin\Microsoft.AI.DependencyCollector.xml" />
+    <Content Include="bin\Microsoft.AI.PerfCounterCollector.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.dll" />
+    <Content Include="bin\Microsoft.AI.ServerTelemetryChannel.xml" />
+    <Content Include="bin\Microsoft.AI.Web.dll" />
+    <Content Include="bin\Microsoft.AI.Web.xml" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.dll" />
+    <Content Include="bin\Microsoft.AI.WindowsServer.xml" />
+    <Content Include="bin\Microsoft.ApplicationInsights.dll" />
+    <Content Include="bin\Microsoft.ApplicationInsights.xml" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" />
+    <Content Include="bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml" />
+    <Content Include="bin\Microsoft.Web.Infrastructure.dll" />
+    <Content Include="bin\RazorC.NetWebApplication.dll" />
+    <Content Include="bin\RazorC.NetWebApplication.pdb" />
+    <Content Include="bin\roslyn\csc.exe" />
+    <Content Include="bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.dll" />
+    <Content Include="bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\vbc.exe" />
+    <Content Include="bin\roslyn\VBCSCompiler.exe" />
+    <Content Include="bin\System.Data.SqlServerCe.dll" />
+    <Content Include="bin\System.Data.SqlServerCe.Entity\System.Data.SqlServerCe.Entity.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.WebPages.Deployment.dll" />
+    <Content Include="bin\System.Web.WebPages.dll" />
+    <Content Include="bin\System.Web.WebPages.Razor.dll" />
+    <Content Include="bin\WebMatrix.Data.dll" />
+    <Content Include="bin\WebMatrix.WebData.dll" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\msvcr90.dll" />
+    <Content Include="bin\X86\Microsoft.VC90.CRT\README_ENU.txt" />
+    <Content Include="bin\X86\sqlceca40.dll" />
+    <Content Include="bin\X86\sqlcecompact40.dll" />
+    <Content Include="bin\X86\sqlceer40EN.dll" />
+    <Content Include="bin\X86\sqlceme40.dll" />
+    <Content Include="bin\X86\sqlceqp40.dll" />
+    <Content Include="bin\X86\sqlcese40.dll" />
+    <Content Include="favicon.ico" />
+    <Content Include="license.txt" />
+    <Content Include="obj\Debug\RazorC.NetWebApplication.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Debug\RazorC.NetWebApplication.dll" />
+    <Content Include="obj\Debug\RazorC.NetWebApplication.pdb" />
+    <Content Include="readme.txt" />
+    <Content Include="robots.txt" />
+    <Content Include="scripts\ai.0.15.0-build58334.js" />
+    <Content Include="scripts\ai.0.15.0-build58334.min.js" />
+    <Content Include="tinymce\license.txt" />
+    <Content Include="tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="tinymce\plugins\code\plugin.min.js" />
+    <Content Include="tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="tinymce\plugins\example\plugin.min.js" />
+    <Content Include="tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-gloss-cyan-menu-item-hover.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-gloss-menu-item-hover.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-gloss-semitransparent-menu-item-hover.png" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-human-menu-item-hover.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-osx-menu-item-hover.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-vista-bg.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-vista-menu-item-hover.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\cmenu-xp-bg.gif" />
+    <Content Include="tinymce\plugins\FileManager\css\jquery.contextmenu.css" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-icons_222222_256x240.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="tinymce\plugins\FileManager\css\ui-lightness\jquery-ui-1.8.4.custom.css" />
+    <Content Include="tinymce\plugins\FileManager\Default.aspx" />
+    <Content Include="tinymce\plugins\FileManager\Funcations.aspx" />
+    <Content Include="tinymce\plugins\FileManager\icons\21-0.gif" />
+    <Content Include="tinymce\plugins\FileManager\icons\CCopy.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\CDelete.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\ceditcut.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\cfolderpng.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Copy-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\cPaste.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Cut-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Delete-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\editcut-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\File-copy-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Files-add-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\folder-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\folder-64.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Gnome-Dialog-Error-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Gnome-Edit-Paste-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\home-32_1.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\img-add-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Library-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Paint-32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Paint-64.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\rar_32.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Unknown-icon-64.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Unknown-icon.png" />
+    <Content Include="tinymce\plugins\FileManager\icons\Zip-file-32.png" />
+    <Content Include="tinymce\plugins\FileManager\js\jquery-1.4.2.min.js" />
+    <Content Include="tinymce\plugins\FileManager\js\jquery-ui-1.8.4.custom.min.js" />
+    <Content Include="tinymce\plugins\FileManager\js\jquery.contextmenu.js" />
+    <Content Include="tinymce\plugins\FileManager\js\jquery.jstree.js" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\apple\bg.jpg" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\apple\d.png" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\apple\dot_for_ie.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\apple\style.css" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\apple\throbber.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\classic\d.png" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\classic\dot_for_ie.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\classic\style.css" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\classic\throbber.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default-rtl\d.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default-rtl\d.png" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default-rtl\dots.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default-rtl\style.css" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default-rtl\throbber.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default\d.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default\d.png" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default\style.css" />
+    <Content Include="tinymce\plugins\FileManager\js\themes\default\throbber.gif" />
+    <Content Include="tinymce\plugins\FileManager\js\tiny_mce_popup.js" />
+    <Content Include="tinymce\plugins\FileManager\license.txt" />
+    <Content Include="tinymce\plugins\FileManager\player.aspx" />
+    <Content Include="tinymce\plugins\FileManager\Uploader.aspx" />
+    <Content Include="tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="tinymce\plugins\image\plugin.min.js" />
+    <Content Include="tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="tinymce\plugins\link\plugin.min.js" />
+    <Content Include="tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="tinymce\plugins\media\plugin.min.js" />
+    <Content Include="tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="tinymce\plugins\print\plugin.min.js" />
+    <Content Include="tinymce\plugins\save\plugin.min.js" />
+    <Content Include="tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="tinymce\plugins\table\plugin.min.js" />
+    <Content Include="tinymce\plugins\template\plugin.min.js" />
+    <Content Include="tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="tinymce\skins\lightgray\content.min.css" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="tinymce\skins\lightgray\img\wline.gif" />
+    <Content Include="tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="tinymce\themes\modern\theme.min.js" />
+    <Content Include="tinymce\tinymce.min.js" />
+    <Content Include="upfiles\razorc.jpg" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Code\rcInstance.cs" />
+    <Content Include="App_Code\SelectedrcInstance.cs" />
+    <Compile Include="tinymce\plugins\FileManager\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\Funcations.aspx.designer.cs">
+      <DependentUpon>Funcations.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\player.aspx.designer.cs">
+      <DependentUpon>player.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\Uploader.aspx.designer.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+    </Compile>
+    <Content Include="App_Code\WebPageRouteHandler.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tinymce\plugins\FileManager\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\Funcations.aspx.cs">
+      <DependentUpon>Funcations.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\player.aspx.cs">
+      <DependentUpon>player.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tinymce\plugins\FileManager\Uploader.aspx.cs">
+      <DependentUpon>Uploader.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49182</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49192/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

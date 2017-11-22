@@ -1,0 +1,75 @@
+#social-header{margin-top:5px;}
+
+#header-contact {
+padding-top:35px;
+font-weight:bold;
+}
+
+.margin-top-25 {
+margin-top:25px;}
+.margin-bottom-25 {
+margin-bottom :25px;}
+
+
+.navbar {
+margin-bottom:0px;
+}
+
+
+/*JUMBOTRON*/
+.jumbotron {
+  padding:0px;
+ /* background-image:url("/rcLayouts/Default/assets/custom/img/bg-slate-3.jpg");  */
+}
+
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 0px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 1;
+  top:100px;
+  text-align:center;
+}
+    .carousel-caption a {margin-top:20px;     }
+.carousel-control {
+  width: 5%;
+}
+
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 400px;
+  /*background-color:#555;*/
+}
+.carousel img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 400px;
+}
+
+
+.carousel-control.left {
+  background-image:none;
+}
+.carousel-control.right {
+    background-image:none;
+}
+
+
+
+/* FOOTER
+-------------------------------------------------- */
+.footer{padding:18px 0; }
+
+#back-top a{position:fixed;bottom:30px;right:30px;color:#eee;background-color:rgba(0,0,0,0.3);-webkit-transition:all .25s ease;-moz-transition:all .25s ease;-ms-transition:all .25s ease;-o-transition:all .25s ease;transition:all .25s ease;padding:10px;border-radius:5px;text-align:center}
+#back-top a:hover{background-color:rgba(0,0,0,0.7)}
+#back-top a i{font-size:3em}

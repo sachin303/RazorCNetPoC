@@ -1,0 +1,35 @@
+﻿@using System.Xml
+@using System.Data
+@{
+    Page.Title = "razorC.net";
+
+    //display news from razorC.net 
+    XmlTextReader reader = new XmlTextReader("http://www.razorc.net/rss");
+    DataSet ds = new DataSet();
+    try
+    {
+        ds.ReadXml(reader) ;
+    }
+    catch (Exception)
+    {}
+    
+    
+    }
+
+@section head {
+    
+}
+@section menu{
+@RenderPage("_Menu.cshtml")
+}
+ <fieldset>
+   <legend>Whats New</legend>
+   @if (ds.Tables.Count  > 0)
+   {
+       foreach (DataRow row in ds.Tables[2].Rows)
+       {
+       <p><a href="@row[2]"><b>@row[0]</b></a></p>
+       <p>@row[1]</p>
+       }
+   }
+</fieldset> 

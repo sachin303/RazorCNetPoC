@@ -1,0 +1,10 @@
+﻿"menuitem": [
+  {
+    "InstanceName": "Web",
+    "ConnectionName": "razorCWebA"
+  },
+  {
+    "InstanceName": "Marketer",
+    "ConnectionName": "razorCMarketer"
+  }
+]
